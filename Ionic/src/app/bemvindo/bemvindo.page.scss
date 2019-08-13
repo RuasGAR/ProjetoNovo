@@ -1,0 +1,16 @@
+.bg-bemvindo{
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.buttons{
+    padding-top: 480px;
+}
+ion-button {
+    --background:beige;
+    color: #CC0000;
+}
+
+
