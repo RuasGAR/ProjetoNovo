@@ -1,0 +1,50 @@
+
+<ion-content>
+  <!--Background-->
+  <div class="bg-cadastro">
+      <!--imagem Logo-->
+      <div class="center">
+        <img src="assets/img/logo.png" alt="Logo" class="logo" width="300">
+      </div>
+      <!--Texto-->
+      <h6 class="Text">Novo Cadastro</h6>
+      <!--Forms-->
+      <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+        <div class="form">
+          <ion-list>
+          <ion-item id="entrada" [class.invalid]="registerForm.controls.name.invalid && registerForm.controls.name.touched" 
+          class="ion-margin-top bg-transparent">
+            <ion-input type="text" placeholder="Nome e Sobrenome" formControlName="name"></ion-input>
+          </ion-item>
+
+          <ion-item id="entrada" [class.invalid]="registerForm.controls.username.invalid && registerForm.controls.username.touched" 
+          class="ion-margin-top bg-transparent">
+              <ion-input type="text" placeholder="Nome de Usuário" formControlName="username"></ion-input>
+            </ion-item>
+
+          <ion-item id="entrada" [class.invalid]="registerForm.controls.email.invalid && registerForm.controls.email.touched" 
+          class="ion-margin-top bg-transparent">
+              <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+          </ion-item>
+  
+          <ion-item id="entrada" [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched" 
+          class="ion-margin-top bg-transparent">
+              <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+          </ion-item>
+          </ion-list>
+        </div>
+
+        <ion-row class="ion-justify-content-center">
+          <ion-button type="submit" expand="block" size="small"><strong>Cadastrar</strong></ion-button>
+          <!--[disabled]="registerForm.invalid"-->
+        </ion-row>
+        <!--Criar nova conta-->
+        <div class="txtLogin">
+            Já tenho uma conta
+        </div>
+    
+      </form>
+      
+  
+  </div>
+</ion-content>
