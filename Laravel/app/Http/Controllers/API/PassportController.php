@@ -11,6 +11,22 @@ use DB;
 
 class PassportController extends Controller 
 {
+    // função que retorna mensagens de erro ao usuário de acordo com o erro cometido por ele durante o cadastro
+    public function messages() {
+        return [
+            'name.required' => 'O preenchimento deste campo é obrigatório!',
+            'name.min' => 'Seu nome deve possuir no mínimo 10 caracteres.',
+            'username.required' => 'O preenchimento deste campo é obrigatório!',
+            'username.min' => 'Seu nome de usuário deve possuir no mínimo 5 caracteres.',
+            'username.alpha_dash' => 'Seu nome de usuário deve ser constituído apenas por letras, números, hífen e underline.',
+            'email.required' => 'O preenchimento deste campo é obrigatório!',
+            'email.email' => 'Insira um e-mail no formato válido!',
+            'password.required' => 'O preenchimento deste campo é obrigatório!',
+            'password.min' => 'Sua senha deve possuir no mínimo 8 caracteres'
+        ];
+    }
+
+    //função que cadastra um novo usuário
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:10', //o campo nome é obrigatório e seu tamanho mínimo são 10 caracteres
