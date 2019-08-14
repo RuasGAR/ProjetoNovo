@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+import { Router } from '@angular/router'; 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -7,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginPage implements OnInit {
   registerForm: FormGroup;
-  constructor(public formbuilder: FormBuilder) {
+  constructor(public formbuilder: FormBuilder, public router: Router) {
 
     this.registerForm = this.formbuilder.group({
       email:[null, [Validators.required, Validators.email]],
@@ -16,6 +18,10 @@ export class LoginPage implements OnInit {
 
   }  
   ngOnInit() {}
+  //função que abre pagina de Cadastro
+  abrirCadastro (){
+    this.router.navigate(['/cadastro']);
+  }
 
   submitForm(form) {
     console.log(form);

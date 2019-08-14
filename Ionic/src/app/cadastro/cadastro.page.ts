@@ -26,6 +26,10 @@ export class CadastroPage implements OnInit {
     console.log(form);
     console.log(form.value);
   }
+  //funcao que abre pagina de Login
+  abrirLogin (){
+    this.router.navigate(['/login']);
+  }
 
   registrarUsuario( form ) {
 
@@ -42,7 +46,7 @@ export class CadastroPage implements OnInit {
   
       }
   
-    }
+  }
   
 
 }

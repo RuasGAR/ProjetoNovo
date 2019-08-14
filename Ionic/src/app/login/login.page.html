@@ -25,12 +25,12 @@
         </div>
         <!--botao cadastrar-->
         <ion-row class="ion-justify-content-center">
-          <ion-button type="submit" expand="block" size="small" [disabled]="registerForm.invalid"><strong>Entrar</strong></ion-button>
+          <ion-button type="submit" expand="block" size="small" [disabled]="registerForm.invalid" (click)= "abrirCadastro()"><strong>Entrar</strong></ion-button>
           
         </ion-row>
         <!--Criar nova conta-->
-        <div class="txtCadastro">
-          Quero criar uma nova conta
+        <div class="txtCadastro" (click)= "abrirCadastro()" >
+          <span>Quero criar uma nova conta</span>
         </div>
 
     
