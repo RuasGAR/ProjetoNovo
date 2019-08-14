@@ -19,7 +19,7 @@ export class BemvindoPage implements OnInit {
   }
   //funcao que abre pagina Home
   abrirHome (){
-    this.router.navigate(['/tabs/tab1']);
+    this.router.navigate(['/tab1']);
   }
 
 }
