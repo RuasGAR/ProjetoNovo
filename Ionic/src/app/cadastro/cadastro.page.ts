@@ -42,7 +42,7 @@ export class CadastroPage implements OnInit {
         this.authService.registrarUsuario( form.value ).subscribe(
           ( res ) => {
             console.log( res );
-            this.router.navigate(['home']);
+            this.router.navigate(['/login']);
           },(error) => {
             console.log(error);
           }
