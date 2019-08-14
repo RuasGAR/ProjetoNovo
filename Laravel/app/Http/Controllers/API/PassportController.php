@@ -26,7 +26,7 @@ class PassportController extends Controller
         ];
     }
 
-    //função que cadastra um novo usuário
+    //função que realiza o cadastro de um novo usuário
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:10', //o campo nome é obrigatório e seu tamanho mínimo são 10 caracteres
@@ -52,5 +52,36 @@ class PassportController extends Controller
             'message' => 'O usuário '.$user->username.' foi criado com sucesso!',
             'data' => null
         ], 200);
+    }
+
+    //função que realiza o login de um usuário
+    public function login() {
+        //o login será realizado através do e-mail e da senha do usuário
+        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+            $user = Auth::user();
+            $token = $user->createToken('FriendFlix')->accessToken;
+            return response()->json([
+                'message' => 'O usuário '.$user->username.' está logado!',
+                'data' => [
+                    'user' => $user,
+                    'token' => $token
+                ]
+        ], 200);
+        } else {
+            return response()->json([
+                'message' => 'E-mail ou senha inválidos!',
+                'data' => null
+            ], 401);
+        }
+    }
+
+    //função que realiza o logout de um usuário
+    public function logout() {
+        $accessToken = Auth::user()->token();
+        DB::table('oauth_refresh_tokens')->where('access_token_id', $accessToken->id)->update([
+            'revoked' => true
+        ]);
+        $accessToken->revoke();
+        return response()->json(null, 204);
     }
 }

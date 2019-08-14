@@ -18,3 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('register','API\PassportController@register'); //rota para efetuar o cadastro do usuário
+Route::post('login','API\PassportController@login'); //rota para efetuar o login do usuário
+
+//neste grupo, estão as rotas que necessitam que o usuário esteja autenticado
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('logout','API\PassportController@logout'); //rota para efetuar o logout do usuário
+});
