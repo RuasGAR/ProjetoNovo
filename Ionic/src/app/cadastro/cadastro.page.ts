@@ -25,6 +25,7 @@ export class CadastroPage implements OnInit {
   submitForm(form) {
     console.log(form);
     console.log(form.value);
+    //this.registrarUsuario(this.registerForm);
   }
   //funcao que abre pagina de Login
   abrirLogin (){
@@ -35,12 +36,15 @@ export class CadastroPage implements OnInit {
 
     // Se o formulário for válido
       if ( form.status == "VALID" ) {
+        console.log(form.status);
   
       // Mandaremos a requisição para a API
         this.authService.registrarUsuario( form.value ).subscribe(
           ( res ) => {
             console.log( res );
             this.router.navigate(['home']);
+          },(error) => {
+            console.log(error);
           }
         );
   

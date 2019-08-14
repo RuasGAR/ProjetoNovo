@@ -20,7 +20,15 @@ export class AuthService {
   constructor( public http: HttpClient ) { }
 
   registrarUsuario( form ): Observable<any> {
-  	return this.http.post( this.apiUrl + 'register', form, this.httpHeaders );
+    console.log(form);
+    return this.http.post( this.apiUrl + 'register', {
+      'name':form.name,
+      'username':form.username,
+      'password':form.password,
+      'email':form.email
+
+    }, this.httpHeaders );
+    
   }
 
 }
