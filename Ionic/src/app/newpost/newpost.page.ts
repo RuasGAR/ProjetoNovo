@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-newpost',
@@ -12,7 +13,7 @@ export class NewpostPage implements OnInit {
   myPhoto;
 
   registerForm: FormGroup;  
-  constructor(public formbuilder: FormBuilder, private camera:Camera) { 
+  constructor(public formbuilder: FormBuilder, private camera:Camera,private storage:Storage) { 
 
     this.registerForm = this.formbuilder.group({
       text:[null, [Validators.required, Validators.maxLength(200)]],
@@ -44,7 +45,6 @@ export class NewpostPage implements OnInit {
     );
   }
  
-
   ngOnInit() {
   }
 }
