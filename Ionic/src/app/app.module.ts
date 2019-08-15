@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { ServicePostService } from './services/service-post.service';
+import { HttpClientModule } from '@angular/common/http'; 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,11 +20,14 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-  IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpClientModule
+    
 ],
   providers: [
     StatusBar,
     SplashScreen,
+    ServicePostService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

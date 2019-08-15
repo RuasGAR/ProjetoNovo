@@ -11,10 +11,19 @@ export class ServicePostService {
 
   constructor(public http: HttpClient) { }
 
-  public getPost():Observable<any> {
-    return this.http.get(this.backendURL + 'post/');
-
-
+  public getPosts():Observable<any> {
+    return this.http.get(this.backendURL + 'post');
   }
+  
+  public createPost(post):Observable<any> {
+    return this.http.post(
+      this.backendURL + 'post', {
+        name: post.name,
+        text: post.text,
+        username:post.user.name,
+        image: post.image
+      });
+  }
+
 
 } 

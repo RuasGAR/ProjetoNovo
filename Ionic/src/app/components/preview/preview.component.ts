@@ -8,6 +8,9 @@ import { ServicePostService } from '../../services/service-post.service';
 })
 export class PreviewComponent implements OnInit {
 
+  previews = [];
+  selectedPreview = -1;
+
   constructor(public postService: ServicePostService) { }
 
   ngOnInit() {}
