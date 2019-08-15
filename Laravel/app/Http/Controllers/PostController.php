@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 use Auth;
 
@@ -29,5 +30,16 @@ class PostController extends Controller
                 'data' => null
             ], 401);
         }
+    }
+
+    //função que retorna todos os posts
+    public function index() {
+        return Post::all();
+    }
+
+    //função que retorna um post específico
+    public function show($id) {
+        $post = Post::findOrFail($id);
+        return $post;
     }
 }
