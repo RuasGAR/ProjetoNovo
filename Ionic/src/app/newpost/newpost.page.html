@@ -10,12 +10,28 @@
           
           <ion-item>
               <ion-input placeholder="Diga qual de qual série está falando!" type ="text" formControlName="name"></ion-input>
-            </ion-item>
+          </ion-item>
+
         </ion-list>
+        <ion-row>
+            <img src="{{myPhoto}}">
+        </ion-row>
         
-      <ion-row class="ion-justify-content-center">
-        <ion-button class="send" type="submit" shape = "round">Postar</ion-button>
-      </ion-row>
+        <ion-row class = "ion-justify-content-center">
+          <!-- Botão que aciona a galeria -->
+          <div class="around">
+            <ion-button (click)="openGallery()" shape="round" class="image">
+              <ion-icon name="camera"></ion-icon>
+              <ion-label>Ilustre seu post!</ion-label>
+            </ion-button>
+          </div>
+        </ion-row>
+      
+
+        <ion-row class="ion-justify-content-center">
+          <!-- Botão de Submit -->
+          <ion-button class="send" type="submit" shape = "round">Postar</ion-button>
+        </ion-row>
   
   
       </form>
