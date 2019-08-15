@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
 
   //url api
-  apiUrl: string = "http:///localhost:8000/api/";
+  apiUrl: string = "http://localhost:8000/api/";
   // As headers da requisição
   httpHeaders: any = {
   	headers: {
@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   constructor( public http: HttpClient ) { }
-
+  //funcao para cadastrar usuario
   registrarUsuario( form ): Observable<any> {
     console.log(form);
     return this.http.post( this.apiUrl + 'register', {
@@ -30,5 +30,14 @@ export class AuthService {
     }, this.httpHeaders );
 
   }
+  //funcao para logar usuario
+  logarUsuario( form ): Observable<any> {
+    console.log(form);
+  	return this.http.post( this.apiUrl + 'login', {
+      'email':form.email,
+      'password':form.password
+    }, this.httpHeaders);
+  }
+
 
 }
