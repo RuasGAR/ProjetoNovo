@@ -1,0 +1,25 @@
+<ion-content>
+    <div class="ion-padding">
+  
+      <form [formGroup] = "registerForm" (ngSubmit)="submitForm(registerForm)">
+        
+        <ion-list>
+          <ion-item>
+            <ion-input placeholder="O que achou de seu último episódio?" type ="text" formControlName="text"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+              <ion-input placeholder="Diga qual de qual série está falando!" type ="text" formControlName="name"></ion-input>
+            </ion-item>
+        </ion-list>
+        
+      <ion-row class="ion-justify-content-center">
+        <ion-button class="send" type="submit" shape = "round">Postar</ion-button>
+      </ion-row>
+  
+  
+      </form>
+    
+    </div>
+  
+  </ion-content>
