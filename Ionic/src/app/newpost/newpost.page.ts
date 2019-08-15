@@ -22,6 +22,7 @@ export class NewpostPage implements OnInit {
 
   submitForm(form){
     console.log(form);
+    console.log(form.value);
   }
 
   ngOnInit() {
