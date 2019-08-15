@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
 
   //url api
-  apiUrl: string = "http://localhost:8000/api/";
+  apiUrl: string = "http:///localhost:8000/api/";
   // As headers da requisição
   httpHeaders: any = {
   	headers: {
@@ -28,7 +28,7 @@ export class AuthService {
       'email':form.email
 
     }, this.httpHeaders );
-    
+
   }
 
 }
