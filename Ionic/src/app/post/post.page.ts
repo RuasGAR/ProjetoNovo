@@ -15,12 +15,12 @@ export class PostPage implements OnInit {
   }
 
   getPost(id):void{
-    console.log(id);
-    this.postService.getPost(id).subscribe(
-        (res) => {
-            console.log(res);
-            this.post = res;
-        }
-    );
-  }
+      console.log(id);
+      this.postService.getPost(id).subscribe(
+          (res) => {
+              console.log(res);
+              this.post = res;
+          }
+      );
+    }
 }

@@ -21,8 +21,8 @@ export class NewpostPage implements OnInit {
 
     { 
     this.registerForm = this.formbuilder.group({
-      text:[null, [Validators.required, Validators.maxLength(200)]],
-      name:[null, [Validators.required, Validators.maxLength(40)]],
+      text:[null, [Validators.required]],
+      name:[null, [Validators.required]],
     });
   }
 
@@ -54,10 +54,11 @@ export class NewpostPage implements OnInit {
   ngOnInit() {
   }
 
-  createPost(){
+  createPost(name:string, username:string, text:string, image:string){
     this.postService.createPost(this.registerForm).subscribe((res)=>{console.log(res);});
   }
 
+  
 
 
 

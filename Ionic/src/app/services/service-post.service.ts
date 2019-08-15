@@ -15,20 +15,20 @@ export class ServicePostService {
     return this.http.get(this.backendURL + 'post');
   }
   
-  public createPost(post):Observable<any> {
-    return this.http.post(
-      this.backendURL + 'post', {
-        name: post.name,
-        text: post.text,
-        username:post.user.name,
-        image: post.image
-      });
-  }
-
   public getPost(id):Observable<any> {
     return this.http.get(
         this.backendURL + 'post/' + id);
 }
 
+  public createPost(post):Observable<any> {
+    return this.http.post(
+      this.backendURL + 'post', {
+        name: post.name,
+        text: post.text,
+        username:post.user_id.name,
+        image: post.photo
+      });
+  }
 
+  
 } 
