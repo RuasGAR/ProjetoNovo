@@ -24,5 +24,7 @@ Route::post('login','API\PassportController@login'); //rota para efetuar o login
 Route::group(['middleware' => 'auth:api'], function() {
     Route::get('logout','API\PassportController@logout'); //rota para efetuar o logout do usuário
 
+    Route::get('post','PostController@index'); //rota para retornar todos os posts existentes
+    Route::get('post/{id}','PostController@show'); //rota para retornar um post específico
     Route::post('post','PostController@store'); //rota para efetuar a criação de um novo post
 });
