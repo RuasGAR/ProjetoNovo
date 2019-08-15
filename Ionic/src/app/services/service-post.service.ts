@@ -21,6 +21,7 @@ export class ServicePostService {
 }
 
   public createPost(post, user):Observable<any> {
+    console.log("sdasdsadasdsd");
     return this.http.post(
       this.backendURL + 'post', {
         name: post.name,
