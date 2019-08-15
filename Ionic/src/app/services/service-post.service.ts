@@ -25,5 +25,10 @@ export class ServicePostService {
       });
   }
 
+  public getPost(id):Observable<any> {
+    return this.http.get(
+        this.backendURL + 'post/' + id);
+}
+
 
 } 

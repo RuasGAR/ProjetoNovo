@@ -15,4 +15,24 @@ export class PreviewComponent implements OnInit {
 
   ngOnInit() {}
 
+  getPosts(): void {
+		this.postService.getPosts().subscribe(
+			(res) => {
+				window.location.href = res;
+			}
+		);
+  }
+
+  getPost(id):void{
+    console.log(id);
+    this.postService.getPost(id).subscribe(
+        (res) => {
+            console.log(res);
+        }
+    );
+  }
+  
+  
 }
+
+
