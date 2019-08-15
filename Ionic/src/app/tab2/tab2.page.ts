@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+
+import { Router } from '@angular/router'; 
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -7,6 +10,6 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor(public router: Router) {}
 
 }

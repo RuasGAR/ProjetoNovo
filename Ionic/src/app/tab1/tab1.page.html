@@ -4,6 +4,11 @@
     <ion-row>
         <app-preview></app-preview>
     </ion-row>
-  </ion-grid>   
+  </ion-grid> 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="newpost()">
+      <ion-icon name="create"></ion-icon>
+    </ion-fab-button> 
+  </ion-fab>    
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
