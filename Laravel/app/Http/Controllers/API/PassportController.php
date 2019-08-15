@@ -28,7 +28,7 @@ class PassportController extends Controller
 
     //função que realiza o cadastro de um novo usuário
     public function register(Request $request) {
-        dd("to aqui");
+        
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:10', //o campo nome é obrigatório e seu tamanho mínimo são 10 caracteres
             'username' => 'required|min:5',//alpha_dash, //o campo nome de usuário é obrigatório, seu tamanho mínimo são 5 caracteres e os caracteres aceitos são letras, números, hífen e underline

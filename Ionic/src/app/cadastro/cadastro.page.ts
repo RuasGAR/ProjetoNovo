@@ -31,7 +31,7 @@ export class CadastroPage implements OnInit {
   abrirLogin (){
     this.router.navigate(['/login']);
   }
-
+  //funcao para cadastrar usuario
   registrarUsuario( form ) {
 
     // Se o formulário for válido

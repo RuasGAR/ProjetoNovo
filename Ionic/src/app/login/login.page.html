@@ -8,16 +8,16 @@
       <!--Texto-->
       <h6 class="Text">Entre com sua conta para começar</h6>
       <!--Forms-->
-      <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm)">
+      <form [formGroup]="loginForm" (ngSubmit)="loginUsuario(loginForm)">
         <div class="form">
           <ion-list>
           
-          <ion-item id="entrada" [class.invalid]="registerForm.controls.email.invalid && registerForm.controls.email.touched" 
+          <ion-item id="entrada" [class.invalid]="loginForm.controls.email.invalid && loginForm.controls.email.touched" 
           class="ion-margin-top bg-transparent">
               <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
           </ion-item>
   
-          <ion-item id="entrada" [class.invalid]="registerForm.controls.password.invalid && registerForm.controls.password.touched" 
+          <ion-item id="entrada" [class.invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched" 
           class="ion-margin-top bg-transparent">
               <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
           </ion-item>
@@ -25,7 +25,7 @@
         </div>
         <!--botao cadastrar-->
         <ion-row class="ion-justify-content-center">
-          <ion-button type="submit" expand="block" size="small" [disabled]="registerForm.invalid" (click)= "abrirCadastro()"><strong>Entrar</strong></ion-button>
+          <ion-button type="submit" expand="block" size="small" [disabled]="loginForm.invalid"><strong>Entrar</strong></ion-button>
           
         </ion-row>
         <!--Criar nova conta-->
