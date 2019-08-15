@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';  
-import { PostService } from '../services/post.service'
+import { ServicePostService } from '../services/service-post.service';
 
 @Component({
   selector: 'app-post',
@@ -8,19 +8,18 @@ import { PostService } from '../services/post.service'
 })
 export class PostPage implements OnInit {
 
-  constructor(public postService: PostService) { }
+  constructor(public postService: ServicePostService) { }
 
-  getPost(id):void {
+  getPost():void {
     this.postService.getPost().subscribe(
       (res) => {
         console.log(res);
-      }
+      },
        (error) => {
         console.log(error);
       }
     );
-  }
-
+  }      
   ngOnInit() {
   }
 

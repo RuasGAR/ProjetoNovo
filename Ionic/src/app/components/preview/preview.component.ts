@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicePostService } from '../../services/service-post.service';
 
 @Component({
   selector: 'app-preview',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public postService: ServicePostService) { }
 
   ngOnInit() {}
 

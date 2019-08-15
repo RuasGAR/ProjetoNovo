@@ -2,7 +2,7 @@
   <app-header></app-header>
   <ion-grid>
     <ion-row>
-        <app-preview></app-preview>
+        <app-preview *ngFor="let preview of previews"></app-preview>
     </ion-row>
   </ion-grid> 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

@@ -11,8 +11,8 @@ export class ServicePostService {
 
   constructor(public http: HttpClient) { }
 
-  public getPost(id):Observable<any> {
-    return this.http.get(this.backendURL + 'post/' + id);
+  public getPost():Observable<any> {
+    return this.http.get(this.backendURL + 'post/');
 
 
   }
