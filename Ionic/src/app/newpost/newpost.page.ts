@@ -23,6 +23,7 @@ export class NewpostPage implements OnInit {
     this.registerForm = this.formbuilder.group({
       text:[null, [Validators.required]],
       name:[null, [Validators.required]],
+      image:[null]
     });
   }
 
@@ -48,17 +49,13 @@ export class NewpostPage implements OnInit {
   submitForm(form){
     console.log(form);
     console.log(form.value);
+    form.value.image = this.myPhoto;
+    this.postService.createPost(this.registerForm, "sdasdssad").subscribe((res)=>{console.log(res);});
   }
 
  
   ngOnInit() {
   }
-
-  createPost(name:string, username:string, text:string, image:string){
-    this.postService.createPost(this.registerForm).subscribe((res)=>{console.log(res);});
-  }
-
-  
 
 
 
