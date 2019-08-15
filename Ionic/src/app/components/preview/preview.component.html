@@ -1,5 +1,5 @@
 <ion-card *ngFor="let preview of previews">
-    <img src="{{image}}">
+    <img src="{{preview.photo}}">
   
   <ion-card-header>
 
@@ -10,18 +10,18 @@
         <ion-avatar>
           <img src ="https://i.ytimg.com/vi/58R-WRSV_A0/maxresdefault.jpg">
         </ion-avatar>
-        <ion-label><strong>{{username}}</strong></ion-label>
+        <ion-label><strong>{{preview.user.name}}</strong></ion-label>
       </ion-chip>
       
       <ion-chip class="seriesname">
         <ion-icon name="arrow-dropright"></ion-icon>
-        <ion-label>{{name}}</ion-label>
+        <ion-label>{{preview.name}}</ion-label>
       </ion-chip>
 
     </ion-card-title>
   </ion-card-header>
 
   <ion-card-content class="postext">
-      <h3>{{text}}</h3>
+      <h3>{{preview.text}}</h3>
   </ion-card-content>
 </ion-card>

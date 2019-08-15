@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
   			(res) => {
 				console.log( res.message );
 				localStorage.setItem( 'userToken', res.data.token );
-				this.router.navigate(['/tab1']);
+				this.router.navigate(['/tab1', {salve: "o_corinthia"}]);
         }, (error) => {
           console.log(error);
         }

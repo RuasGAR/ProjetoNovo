@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { Storage } from '@ionic/storage';
 import { ServicePostService } from '../services/service-post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newpost',
@@ -16,7 +17,7 @@ export class NewpostPage implements OnInit {
   registerForm: FormGroup;  
   constructor(public formbuilder: FormBuilder, 
     private camera:Camera,private storage:Storage,
-    public postService: ServicePostService
+    public postService: ServicePostService, public router: Router
     ) 
 
     { 
@@ -50,8 +51,16 @@ export class NewpostPage implements OnInit {
     console.log(form);
     console.log(form.value);
     form.value.image = this.myPhoto;
-    this.postService.createPost(this.registerForm, "sdasdssad").subscribe((res)=>{console.log(res);});
+    this.postService.createPost(this.registerForm.value, "sdasdssad").subscribe(
+      (res)=>{
+
+        console.log(res);
+        this.router.navigate(['/tab1']);
+
+      }
+    );
   }
+
 
  
   ngOnInit() {

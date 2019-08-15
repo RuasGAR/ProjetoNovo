@@ -12,8 +12,6 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { ServicePostService } from './services/service-post.service';
 import { HttpClientModule } from '@angular/common/http'; 
-
-import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 
 @NgModule({

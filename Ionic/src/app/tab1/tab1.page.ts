@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  previews;
+  posts = [];
   constructor(public router: Router, public postService: ServicePostService) {}
 
   newpost(){
     this.router.navigate(['/newpost']);
   } 
 
-}
+  ngOnInit(){}
+    
+}  

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App\User;
 use Auth;
 
 class PostController extends Controller
@@ -34,7 +35,11 @@ class PostController extends Controller
 
     //função que retorna todos os posts
     public function index() {
-        return Post::all();
+        $postagens = Post::all();
+        foreach ($postagens as &$postagem) {
+            $postagem->user = User::find($postagem->user_id);
+        }
+        return $postagens;
     }
 
     //função que retorna um post específico
