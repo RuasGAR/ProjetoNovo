@@ -23,4 +23,6 @@ Route::post('login','API\PassportController@login'); //rota para efetuar o login
 //neste grupo, estão as rotas que necessitam que o usuário esteja autenticado
 Route::group(['middleware' => 'auth:api'], function() {
     Route::get('logout','API\PassportController@logout'); //rota para efetuar o logout do usuário
+
+    Route::post('post','PostController@store'); //rota para efetuar a criação de um novo post
 });
