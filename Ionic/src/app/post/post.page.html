@@ -5,24 +5,24 @@
       <!-- Row com a imagem do usuário, bem como com seu nome -->
         <div>
           <img class="idphoto"
-          src=" https://i.ytimg.com/vi/58R-WRSV_A0/maxresdefault.jpg">
+          src="/assets/img/icon.jpg">
         </div>
         <ion-chip outline>
-          {{username}}
+          {{preview.user.name}}
         </ion-chip>
     </ion-row>
       
     <ion-row>
       <!-- Row com o texto do post -->
       <div class="text">
-          {{text}}
+          {{preview.text}}
       </div>
      </ion-row> 
 
      <ion-row>
        <!-- Row com a foto do post -->
        <div class="setcenter">
-         <img class="photo" src="{{image}}">
+         <img class="photo" src="{{preview.photo}}">
        </div>
      </ion-row>
 
@@ -30,7 +30,7 @@
        <!--Row com o chip de série-->
         <ion-chip class = "seriesname">
           <ion-icon name="arrow-dropright"></ion-icon>
-          <ion-label>{{name}}</ion-label>
+          <ion-label>{{preview.name}}</ion-label>
         </ion-chip>
      </ion-row>
 
