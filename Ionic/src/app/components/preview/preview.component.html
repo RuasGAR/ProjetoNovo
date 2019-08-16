@@ -1,6 +1,42 @@
+<!-- Post pré-fixado como exemplo -->
+
+<ion-card>
+
+    <img src="/assets/img/Breaking.jpg">
+
+  <ion-card-header>
+
+    <ion-card-title> 
+      
+      <ion-chip class="profileinfo">
+        <ion-avatar>
+          <img src ="assets/img/icon.jpg">
+        </ion-avatar>
+        <ion-label><strong>RuasGAR</strong></ion-label>
+      </ion-chip>
+      
+      <ion-chip class="seriesname">
+        <ion-icon name="arrow-dropright"></ion-icon>
+        <ion-label>Breaking Bad</ion-label>
+      </ion-chip>
+
+    </ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content class="postext">
+      <h3>O olhar dos meus pais quando digo que estudo back na faculdade pública...</h3>
+  </ion-card-content>
+</ion-card>
+
+
+<!-- For de Ion Cards para os novos posts -->
+
+
 <ion-card *ngFor="let preview of previews">
-    <img src="{{preview.photo}}">
-  
+
+    <!-- <img src="{{preview.photo}}"> ----Aplcável caso o Cordova funcione!! -->
+    <img src="/assets/img/Tyrion.jpg">
+
   <ion-card-header>
 
     <ion-card-title> 
@@ -8,9 +44,9 @@
       
       <ion-chip class="profileinfo">
         <ion-avatar>
-          <img src ="https://i.ytimg.com/vi/58R-WRSV_A0/maxresdefault.jpg">
+          <img src ="assets/img/icon.jpg">
         </ion-avatar>
-        <ion-label><strong>{{preview.user.name}}</strong></ion-label>
+        <ion-label><strong>{{preview.user.username}}</strong></ion-label>
       </ion-chip>
       
       <ion-chip class="seriesname">

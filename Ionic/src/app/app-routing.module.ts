@@ -14,8 +14,8 @@ const routes: Routes = [
  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },
  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
  { path: 'bemvindo', loadChildren: './bemvindo/bemvindo.module#BemvindoPageModule' }
-
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

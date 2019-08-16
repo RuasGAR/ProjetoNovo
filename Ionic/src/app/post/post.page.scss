@@ -1,14 +1,4 @@
-.photo{
-    border-radius:10px;
-    width:95%;
-    width:95%;
-}
-
-.setcenter{
-    display:flex;
-    justify-content:center;
-
-}
+//Imagem do Usuário
 .idphoto{
     width: 50px;
     height: 50px;
@@ -16,6 +6,19 @@
     margin-left:3vw;
     box-shadow:0px 2px 3px black;
   
+}
+//Imagem do Post
+.photo{
+    border-radius:10px;
+    width:95%;
+    width:95%;
+}
+
+//Div para centralizar, poderia ser feito diretamente no Ion Row
+.setcenter{
+    display:flex;
+    justify-content:center;
+
 }
 
 .text{
@@ -34,25 +37,6 @@ ion-chip{
     
 }
 
-.rect{
-    background-color:#cc0000;
-    width: 91vw;
-    height:1vh;
-    border-radius:10px;
-    margin-left:3.3vw;
-    margin-top:2vw;
-    margin-bottom:2vw;
-}
-
-.commentext{
-    margin-left:3.3vw;
-    margin-bottom:3vh;
-    margin-top:1.2vh;
-    color:#cc0000;
-    font-weight:bold;
-
-}
-
 ion-button{
     margin-bottom:1.2vh;
     margin-top:1.2vh;   
@@ -67,3 +51,23 @@ ion-button{
 ion-icon    {
     color:#ffffff;
 }
+
+// Preparação para os comentários
+// .rect{
+//     background-color:#cc0000;
+//     width: 91vw;
+//     height:1vh;
+//     border-radius:10px;
+//     margin-left:3.3vw;
+//     margin-top:2vw;
+//     margin-bottom:2vw;
+// }
+
+// .commentext{
+//     margin-left:3.3vw;
+//     margin-bottom:3vh;
+//     margin-top:1.2vh;
+//     color:#cc0000;
+//     font-weight:bold;
+
+// }

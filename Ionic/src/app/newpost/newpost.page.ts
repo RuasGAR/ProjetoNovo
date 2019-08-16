@@ -51,7 +51,7 @@ export class NewpostPage implements OnInit {
     console.log(form);
     console.log(form.value);
     form.value.image = this.myPhoto;
-    this.postService.createPost(this.registerForm.value, "sdasdssad").subscribe(
+    this.postService.createPost(this.registerForm.value, "user").subscribe(
       (res)=>{
 
         console.log(res);

@@ -1,14 +1,23 @@
 <ion-app>
-  <app-header></app-header>
-  <ion-grid>
-    <ion-row>
-        <app-preview></app-preview>
-    </ion-row>
-  </ion-grid> 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="newpost()">
-      <ion-icon name="create"></ion-icon>
-    </ion-fab-button> 
-  </ion-fab>    
-  <ion-router-outlet></ion-router-outlet>
+  <ion-content>
+
+    <!--Componente Header-->
+    <app-header></app-header>
+
+    <ion-grid>
+      <ion-row>
+        <!--Componentes de preview dos posts-->
+          <app-preview></app-preview>
+      </ion-row>
+    </ion-grid> 
+
+    <!--Fab para direcionar ao formulário de criação de posts-->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="newpost()">
+        <ion-icon name="create"></ion-icon>
+      </ion-fab-button> 
+    </ion-fab>    
+
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
 </ion-app>

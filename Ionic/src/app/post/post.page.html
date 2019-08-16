@@ -1,9 +1,9 @@
 <ion-content>
   <ion-grid>
 
+    <!-- Row com a imagem do usuário, bem como com seu nome -->
+    <div>
     <ion-row> 
-      <!-- Row com a imagem do usuário, bem como com seu nome -->
-        <div>
           <img class="idphoto"
           src="/assets/img/icon.jpg">
         </div>
@@ -11,35 +11,35 @@
           {{preview.user.name}}
         </ion-chip>
     </ion-row>
-      
+    
+    <!-- Row com o texto do post -->
     <ion-row>
-      <!-- Row com o texto do post -->
       <div class="text">
           {{preview.text}}
       </div>
      </ion-row> 
 
+      <!-- Row com a foto do post -->
      <ion-row>
-       <!-- Row com a foto do post -->
        <div class="setcenter">
          <img class="photo" src="{{preview.photo}}">
        </div>
      </ion-row>
 
+     <!--Row com o chip de série-->
      <ion-row>
-       <!--Row com o chip de série-->
         <ion-chip class = "seriesname">
           <ion-icon name="arrow-dropright"></ion-icon>
           <ion-label>{{preview.name}}</ion-label>
         </ion-chip>
      </ion-row>
 
-     <ion-row justify-content-center>
-       <!-- Botão de like -->
+     <!-- Botão de like (se conseguirmos implementar as funções direitinho) -->
+     <!-- <ion-row justify-content-center>
        <ion-button color="light" shape="round">
         <ion-icon name="heart" color="danger"></ion-icon>
        </ion-button>
-     </ion-row>
+     </ion-row> -->
 
      <!-- Se for possível add comentários:
         <ion-row>

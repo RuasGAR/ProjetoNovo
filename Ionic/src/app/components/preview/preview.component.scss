@@ -1,13 +1,16 @@
 ion-card{
 	border-radius:20px;
 	--background: black;	
-    --color:#ffffff !important; 
+	--color:#ffffff !important; 
 }
+
+//Chip do foto de perfil
 .profileinfo{
 	--background:#ffffff;
 	--color:#cc0000;	
 }
 
+//Chip da série
 .seriesname{
 	--background:#cc0000;
 	--color:#ffffff;

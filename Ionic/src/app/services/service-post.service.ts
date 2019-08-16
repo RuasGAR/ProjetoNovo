@@ -18,17 +18,19 @@ export class ServicePostService {
 
   constructor(public http: HttpClient) { }
 
+  //Função que retorna todos os posts, utilizados para a Home
   public getPosts():Observable<any> {
     this.httpHeaders.headers["Authorization"] = "Bearer " + localStorage.getItem('userToken');
     return this.http.get(this.backendURL + 'post', this.httpHeaders );
   }
   
+  //Função para pegar um post específico, que seria usada nas páginas específicas de posts
   public getPost(id):Observable<any> {
     return this.http.get(
         this.backendURL + 'post/' + id);
 }
-
-  public createPost(post, user):Observable<any> {
+  //Função para criar um post
+  public createPost(post,user):Observable<any> {
     this.httpHeaders.headers['Authorization'] = "Bearer " + localStorage.getItem('userToken');
     return this.http.post(
       this.backendURL + 'post', {
